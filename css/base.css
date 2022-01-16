@@ -15,6 +15,7 @@ body {
   --color-link: #fff;
   --color-link-hover: #fff;
   --color-line: rgba(82, 77, 73, 0.38);
+  --color-logo-bg: rgba(126, 124, 123, 0.623);
   color: var(--color-text);
   background-color: var(--color-bg);
   font-family: termina, sans-serif;
@@ -63,7 +64,7 @@ body {
 }
 
 a {
-  text-decoration: underline;
+  text-decoration: none;
   color: var(--color-link);
   outline: none;
 }
@@ -84,7 +85,6 @@ main {
 
 main::before {
   animation: grain 8s steps(10) infinite;
-  background-image: url(../img/noise.png);
   content: "";
   height: 300%;
   left: -50%;
@@ -230,6 +230,7 @@ main::before {
 
 .year {
   grid-area: year;
+  padding-left: 20px;
 }
 
 .credits--site {
@@ -254,14 +255,15 @@ main::before {
     height: 100vh;
     display: grid;
     grid-template-columns: 8rem 12vh 9rem 1fr 1fr;
-    grid-template-rows: 4rem 4rem min-content min-content 1fr 2.5rem;
+    grid-template-rows: 4rem 4rem min-content min-content 1fr min-content 3.5rem;
     grid-template-areas:
       "logo ... ... pagetitle links"
       "logo ... ... demos ..."
       "... ... ... title title"
       "... ... ... ... subtitle"
-      "... menu ... content play"
-      "year ... credits-1 credits-2 ...";
+      "... ... content content ..."
+      "... skillarea skillsarea skillsarea ..."
+      "year ... ... credits-2 socials";
   }
   .line {
     position: relative;
@@ -318,4 +320,26 @@ main::before {
 
 .db {
   display: block;
+}
+
+.social-links {
+  grid-area: socials;
+}
+
+.logo-img {
+  margin: 0 10px;
+}
+
+.social-links,
+.credits--author,
+.year {
+  padding-top: 10px;
+}
+
+.skills {
+  grid-area: skillsarea;
+}
+
+.logos {
+  background-color: var(--color-logo-bg);
 }
